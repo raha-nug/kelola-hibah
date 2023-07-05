@@ -9,8 +9,8 @@
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="assets/img/logo.png" rel="icon" />
+    <link href="assets/img/logo.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect" />
@@ -446,7 +446,11 @@
                             data-bs-target="#add-sub-kegiatan">
                             <i class="bi bi-plus-lg"></i>
                           </button>
-                          <button type="button" class="btn btn-outline-primary">
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-sub-kegiatan">
                             <i class="bi bi-pencil-square"></i>
                           </button>
                           <button type="button" class="btn btn-outline-danger">
@@ -553,7 +557,105 @@
                                   class="form-control"
                                   id="input-harga"
                                   required />
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="submit"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal">
+                            <i class="ri-file-edit-line"></i>
+                            Simpan data
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="edit-sub-kegiatan" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Edit Sub Kegiatan</h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="row g-3">
+                              <div class="col-md-12">
+                                <label
+                                  for="input-uraian"
+                                  class="form-label d-flex justify-content-start">
+                                  Uraian Kegiatan / Pengelompokan Pengeluaran
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="input-uraian"
+                                  required
+                                  disabled
+                                  placeholder="Peralatan" />
+                              </div>
+                            </div>
+                            <div class="row g-3 mt-2">
+                              <div class="col-md-12">
+                                <label
+                                  for="input-sub-uraian"
+                                  class="form-label d-flex justify-content-start">
+                                  Nama Uraian Kegiatan
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="input-sub-uraian"
+                                  required />
+                              </div>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                              <div class="col-md-8">
+                                <label
+                                  for="input-sub-uraian"
+                                  class="form-label d-flex justify-content-start">
+                                  Volume / Satuan
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <div
+                                  class="d-flex justify-content-start"
+                                  id="input-sub-uraian">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    required />
+                                  <select class="form-select">
+                                    <option selected>Unit</option>
+                                    <option>...</option>
+                                  </select>
                                 </div>
+                              </div>
+                            </div>
+                            <div class="row g-3 mt-2">
+                              <div class="col-md-8">
+                                <label
+                                  for="input-harga"
+                                  class="form-label d-flex justify-content-start">
+                                  Harga
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="input-harga"
+                                  required />
+                              </div>
                             </div>
                           </form>
                         </div>
@@ -577,174 +679,37 @@
                   aria-labelledby="history-tab">
                   <!-- Table with stripped rows -->
 
-                  <div class="row mt-2 mb-3">
-                    <div class="text-end">
-                      <button
-                        type="button"
-                        class="btn btn-outline-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#verticalycentered">
-                        <i class="ri-file-edit-line"></i>
-                        Tambah Persyaratan Lembaga
-                      </button>
-                      <div
-                        class="modal fade"
-                        id="verticalycentered"
-                        tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title">
-                                Tambah Persyaratan Lembaga
-                              </h5>
-                              <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                              <form>
-                                <div class="row g-3 mt-2">
-                                  <div class="col-md-12">
-                                    <label
-                                      for="input-jenis-dokumen"
-                                      class="form-label d-flex justify-content-start">
-                                      Jenis Dokumen
-                                      <sup class="text-danger">*</sup>
-                                    </label>
-                                    <select
-                                      id="input-jenis-dokumen"
-                                      class="form-select">
-                                      <option selected>Choose...</option>
-                                      <option>...</option>
-                                    </select>
-                                  </div>
-
-                                  <div class="row g-3">
-                                    <div class="col-md-12">
-                                      <label
-                                        for="input-nama-surat"
-                                        class="form-label d-flex justify-content-start">
-                                        Nama Surat
-                                        <sup class="text-danger">*</sup>
-                                      </label>
-                                      <input
-                                        type="text"
-                                        class="form-control"
-                                        id="input-nama-surat"
-                                        required />
-                                    </div>
-                                  </div>
-
-                                  <div class="row g-3">
-                                    <div class="col-md-12">
-                                      <label
-                                        for="input-no-surat"
-                                        class="form-label d-flex justify-content-start">
-                                        Nomor Surat
-                                        <sup class="text-danger">*</sup>
-                                      </label>
-                                      <input
-                                        type="text"
-                                        class="form-control"
-                                        id="input-no-surat"
-                                        required />
-                                    </div>
-                                  </div>
-
-                                  <div class="row g-3">
-                                    <div class="col-md-12">
-                                      <label
-                                        for="input-keluarkan"
-                                        class="form-label d-flex justify-content-start">
-                                        Mengeluarkan
-                                        <sup class="text-danger">*</sup>
-                                      </label>
-                                      <input
-                                        type="text"
-                                        class="form-control"
-                                        id="input-keluarkan"
-                                        required />
-                                    </div>
-                                  </div>
-
-                                  <div class="row g-3">
-                                    <div class="col-md-12">
-                                      <label
-                                        for="input-file-surat"
-                                        class="form-label d-flex justify-content-start">
-                                        File Surat
-                                        <sup class="text-danger">*</sup>
-                                      </label>
-                                      <input
-                                        type="file"
-                                        class="form-control"
-                                        id="input-file-surat"
-                                        required />
-                                      <span
-                                        class="badge bg-primary d-flex justify-content-start">
-                                        File harus berupa PDF
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
-                            <div class="modal-footer">
-                              <button
-                                type="submit"
-                                class="btn btn-primary"
-                                data-bs-dismiss="modal">
-                                <i class="ri-file-edit-line"></i>
-                                Simpan data
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- End Vertically centered Modal-->
-                    </div>
-                  </div>
-
                   <table class="table">
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Nama Persyaratan</th>
-                        <th scope="col">Nomor Surat</th>
-                        <th scope="col">Yang Mengeluarkan</th>
-                        <th scope="col">File</th>
-                        <th scope="col">Aksi</th>
+                        <th scope="col">Jenis</th>
+                        <th scope="col">Keterangan</th>
+                        <th scope="col">Tanggal</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Administrasi</td>
-                        <td>01/PST-CPS/VII/2023</td>
-                        <td>Pesantren CPS</td>
-                        <td><a href="#">Persyaratan.pdf</a></td>
-                        <td></td>
+                        <td>1</td>
+                        <td>Pengajuan</td>
+                        <td>Pengajuan Dana Hibah</td>
+                        <td>12 Juni 2023</td>
                       </tr>
                     </tbody>
                   </table>
                   <!-- End Table with stripped rows -->
-
-                  <div class="row g-3 pt-4 mt-4 mb-4">
-                    <div class="text-end">
-                      <button type="submit" class="btn btn-primary col-md-3">
-                        <i class="ri-file-edit-line"></i>
-                        Perbaharui data MWCNU
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </div>
               <!-- End Pills Tabs -->
             </div>
           </div>
           <!-- End Card with header and footer -->
+          <div class="d-grid">
+            <button type="button" class="btn btn-warning mt-2">
+              <i class="ri-send-plane-fill"></i>
+              Submit Data Untuk Dilakukan Verifikasi !
+            </button>
+          </div>
         </div>
       </section>
     </main>
