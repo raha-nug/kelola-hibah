@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Components / Tabs - NiceAdmin Bootstrap Template</title>
+    <title>Daftar Hibah</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -25,7 +25,6 @@
     <link
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet" />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
     <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
     <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
@@ -59,11 +58,11 @@
           </a>
         </li>
         <!-- End Dashboard Nav -->
-
+        <li class="nav-heading">Permohonan</li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="hibah.html">
-            <i class="bi bi-grid"></i>
-            <span>Permohonan Hibah</span>
+            <i class="ri-file-copy-2-line"></i>
+            <span>Daftar Hibah</span>
           </a>
         </li>
         <!-- End Hibah Nav -->
@@ -77,7 +76,8 @@
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Permohonan Hibah</li>
+            <li class="breadcrumb-item">Permohonan</li>
+            <li class="breadcrumb-item active">Daftar Hibah</li>
           </ol>
         </nav>
       </div>
@@ -85,35 +85,35 @@
 
       <section class="section">
         <div class="col-lg-12">
-          <!-- Default Card -->
           <div class="card">
             <div class="card-body">
-              <p class="mt-3">
-                Hi,
-                <strong>Akun Test</strong>
-                Sebelum masuk ke tahap selanjutnya, silahkan lengkapi dahulu
-                identitas MWCNU Dibawah ini
-              </p>
-
-              <p>Keterangan:</p>
-              <ul>
-                <li>
-                  Tanda Bintang merah seperti (
-                  <sup class="text-danger">*</sup>
-                  ) artinya wajib diisi
-                </li>
-                <li>
-                  File yang diupload maksimal
-                  <strong>2 MB</strong>
-                </li>
-                <li>
-                  Ekstention File yang harus diupload akan terlihat dibawah
-                  inputan
-                </li>
-              </ul>
+              <h5 class="card-title">Filter Daftar Hibah</h5>
+              <div class="row">
+                <div class="col-lg-3">
+                  <label
+                    for="filter-by-years"
+                    class="form-label d-flex justify-content-start">
+                    Berdasarkan Tahun Anggaran
+                  </label>
+                  <select id="filter-by-years" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-lg-3">
+                  <label
+                    for="filter-by-status"
+                    class="form-label d-flex justify-content-start">
+                    Berdasarkan Status
+                  </label>
+                  <select id="filter-by-status" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- End Default Card -->
         </div>
 
         <div class="col-lg-12">
@@ -122,435 +122,45 @@
             <div class="card-body">
               <h5 class="card-title">Kelengkapan Identitas MWCNU</h5>
 
-              <!-- Pills Tabs -->
-              <ul
-                class="nav nav-pills mb-3 mt-4 gap-3"
-                id="pills-tab"
-                role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="pills-data-mwcnu-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-data-mwcnu"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-data-mwcnu"
-                    aria-selected="true">
-                    <i class="ri-file-copy-2-line"></i>
-                    Data MWCNU
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="pills-data-pimpinan-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-data-pimpinan"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-data-pimpinan"
-                    aria-selected="false">
-                    <i class="ri-file-copy-2-line"></i>
-                    Data Pimpinan MWCNU
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="pills-data-operator-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-data-operator"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-data-operator"
-                    aria-selected="false">
-                    <i class="ri-file-copy-2-line"></i>
-                    Data Operator MWCNU
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="pills-data-persyaratan-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-data-persyaratan"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-data-persyaratan"
-                    aria-selected="false">
-                    <i class="ri-file-copy-2-line"></i>
-                    Data Persyaratan Lembaga
-                  </button>
-                </li>
-              </ul>
-
-              <div class="card bg-primary">
-                <div class="card-body text-light text-center mt-3">
-                  Silahkan isi atau lengkapi data dibawah ini
-                </div>
-              </div>
-
-              <div class="tab-content pt-2" id="myTabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="pills-data-mwcnu"
-                  role="tabpanel"
-                  aria-labelledby="data-mwcnu-tab">
-                  <!-- Multi Columns Form -->
-                  <form>
-                    <div class="row g-3">
-                      <div class="col-md-6">
-                        <label for="inputName5" class="form-label">
-                          Nama MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputName5"
-                          disabled
-                          placeholder="MWC Singaparna"
-                          required />
-                      </div>
-                      <div class="col-md-6">
-                        <label for="input-alamat" class="form-label">
-                          Alamat MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-alamat"
-                          required />
-                      </div>
-                    </div>
-
-                    <div class="row g-3 pt-4">
-                      <div class="col-md-6">
-                        <label for="input-tlp" class="form-label">
-                          No tlp / Handphone
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-tlp"
-                          required />
-                      </div>
-
-                      <div class="col-md-6">
-                        <label for="input-email" class="form-label">
-                          Email MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="input-email"
-                          required />
-                      </div>
-                    </div>
-                    <div class="row g-3 pt-4">
-                      <div class="col-md-4">
-                        <label for="input-kabupaten" class="form-label">
-                          Kabupaten
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-kabupaten"
-                          required />
-                      </div>
-
-                      <div class="col-md-4">
-                        <label for="input-kecamatan" class="form-label">
-                          Kecamatan
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-kecamatan"
-                          required />
-                      </div>
-
-                      <div class="col-md-4">
-                        <label for="input-desa" class="form-label">
-                          Desa
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-desa"
-                          required />
-                      </div>
-                    </div>
-                    <div class="row g-3 pt-4">
-                      <div class="col-md-6">
-                        <label for="input-kabupaten" class="form-label">
-                          Kop surat MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="file"
-                          class="form-control"
-                          id="input-kabupaten"
-                          required
-                          accept="application/pdf" />
-                        <span class="badge bg-primary">
-                          File harus berupa PDF
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">NO PJBR</th>
+                    <th scope="col">Sub Kegiatan</th>
+                    <th scope="col">Lembaga</th>
+                    <th scope="col">Alamat Lembaga</th>
+                    <th scope="col">Peruntukan</th>
+                    <th scope="col">Tahun</th>
+                    <th scope="col">Jumlah</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>150</td>
+                    <td>Pengelolaan Sarana dan Prasarana Spiritual</td>
+                    <td>PST Cipasung</td>
+                    <td>Jl. KH.Ruhiat no 1 Cipasung</td>
+                    <td></td>
+                    <td>2023</td>
+                    <td>Rp. 10.000.000.-</td>
+                    <td>
+                      <button type="button" class="btn btn-light">
+                        <span class="badge text-primary">
+                          Menunggu Pengisian
                         </span>
-                      </div>
-
-                      <div class="col-md-6">
-                        <label for="input-kecamatan" class="form-label">
-                          Domisili MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="file"
-                          class="form-control"
-                          id="input-kecamatan"
-                          required
-                          accept="application/pdf" />
-                        <span class="badge bg-primary">
-                          File harus berupa PDF
-                        </span>
-                      </div>
-                    </div>
-                    <div class="row g-3 pt-4 mt-4 mb-4">
-                      <div class="text-end">
-                        <button type="submit" class="btn btn-primary col-md-3">
-                          <i class="ri-file-edit-line"></i>
-                          Perbaharui data MWCNU
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                  <!-- End Multi Columns Form -->
-                </div>
-
-                <div
-                  class="tab-pane fade"
-                  id="pills-data-pimpinan"
-                  role="tabpanel"
-                  aria-labelledby="data-pimpinan-tab">
-                  <!-- Multi Columns Form -->
-                  <form>
-                    <div class="row g-3 mt-4">
-                      <div class="col-md-4">
-                        <label for="inputName5" class="form-label">
-                          Nama Lengkap
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputName5"
-                          required />
-                      </div>
-                      <div class="col-md-4">
-                        <label for="input-jabatan" class="form-label">
-                          Jabatan
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-jabatan"
-                          required />
-                      </div>
-                      <div class="col-md-4">
-                        <label for="input-nik" class="form-label">
-                          No KTP Ketua MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-nik"
-                          required />
-                      </div>
-                    </div>
-
-                    <div class="row g-3 pt-4">
-                      <div class="col-md-4">
-                        <label for="input-tlp" class="form-label">
-                          No HP Ketua MWC
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-tlp"
-                          required />
-                      </div>
-                      <div class="col-md-4">
-                        <label for="input-ktp" class="form-label">
-                          File KTP Ketua
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="file"
-                          class="form-control"
-                          id="input-ktp"
-                          required
-                          accept="application/pdf" />
-                        <span class="badge bg-primary">
-                          File harus berupa PDF
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="row g-3 pt-4">
-                      <div class="col-md-12">
-                        <label for="input-alamat-ketua" class="form-label">
-                          Alamat Ketua Sesuai KTP
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <div class="col-sm-10">
-                          <textarea
-                            id="input-alamat-ketua"
-                            class="form-control"
-                            style="height: 100px"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row g-3 pt-4 mt-4 mb-4">
-                      <div class="text-end">
-                        <button type="submit" class="btn btn-primary col-md-3">
-                          <i class="ri-file-edit-line"></i>
-                          Perbaharui data MWCNU
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                  <!-- End Multi Columns Form -->
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-data-operator"
-                  role="tabpanel"
-                  aria-labelledby="data-operator-tab">
-                  <!-- Multi Columns Form -->
-                  <form>
-                    <div class="row g-3 mt-4">
-                      <div class="col-md-4">
-                        <label for="inputName5" class="form-label">
-                          Nama Lengkap
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputName5"
-                          required />
-                      </div>
-
-                      <div class="col-md-4">
-                        <label for="input-nik" class="form-label">
-                          No KTP Operator MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-nik"
-                          required />
-                      </div>
-
-                      <div class="col-md-4">
-                        <label for="input-tlp" class="form-label">
-                          No HP Operator MWC
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-tlp"
-                          required />
-                      </div>
-                    </div>
-
-                    <div class="row g-3 pt-4">
-                      <div class="col-md-12">
-                        <label for="input-alamat-operator" class="form-label">
-                          Alamat Operator Sesuai KTP
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <div class="col-sm-10">
-                          <textarea
-                            id="input-alamat-operator"
-                            class="form-control"
-                            style="height: 100px"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row g-3 pt-4 mt-4 mb-4">
-                      <div class="text-end">
-                        <button type="submit" class="btn btn-primary col-md-3">
-                          <i class="ri-file-edit-line"></i>
-                          Perbaharui data MWCNU
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                  <!-- End Multi Columns Form -->
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-data-persyaratan"
-                  role="tabpanel"
-                  aria-labelledby="data-persyaratan-tab">
-                  <!-- Table with stripped rows -->
-
-                  <div class="row mt-2 mb-3">
-                    <div class="text-end">
-                      <button type="button" class="btn btn-outline-primary">
-                        <i class="ri-file-edit-line"></i>
-                        Tambah Persyaratan Lembaga
                       </button>
-                    </div>
-                  </div>
-
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Persyaratan</th>
-                        <th scope="col">Nomor Surat</th>
-                        <th scope="col">Yang Mengeluarkan</th>
-                        <th scope="col">File</th>
-                        <th scope="col">Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Administrasi</td>
-                        <td>01/PST-CPS/VII/2023</td>
-                        <td>Pesantren CPS</td>
-                        <td><a href="#">Persyaratan.pdf</a></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <!-- End Table with stripped rows -->
-
-                  <div class="row g-3 pt-4 mt-4 mb-4">
-                    <div class="text-end">
-                      <button type="submit" class="btn btn-primary col-md-3">
-                        <i class="ri-file-edit-line"></i>
-                        Perbaharui data MWCNU
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Pills Tabs -->
+                    </td>
+                    <td>
+                      <a class="btn btn-primary" href="detail-hibah.html">
+                        Detail
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
             </div>
           </div>
           <!-- End Card with header and footer -->
@@ -579,7 +189,6 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/quill/quill.min.js"></script>
     <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
