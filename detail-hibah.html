@@ -339,14 +339,14 @@
                           type="file"
                           class="form-control"
                           id="input-nik"
-                          required 
-                          accept="application/pdf"/>
+                          required
+                          accept="application/pdf" />
                         <span class="badge bg-primary">
                           File harus berupa PDF
                         </span>
                       </div>
                     </div>
-   
+
                     <div class="row g-3 pt-4 mt-4 mb-4">
                       <div class="text-end">
                         <button type="submit" class="btn btn-primary col-md-3">
@@ -364,69 +364,211 @@
                   role="tabpanel"
                   aria-labelledby="rab-tab">
                   <!-- Multi Columns Form -->
-                  <form>
-                    <div class="row g-3 mt-4">
-                      <div class="col-md-4">
-                        <label for="inputName5" class="form-label">
-                          Nama Lengkap
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputName5"
-                          required />
-                      </div>
 
-                      <div class="col-md-4">
-                        <label for="input-nik" class="form-label">
-                          No KTP Operator MWCNU
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-nik"
-                          required />
-                      </div>
-
-                      <div class="col-md-4">
-                        <label for="input-tlp" class="form-label">
-                          No HP Operator MWC
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="input-tlp"
-                          required />
-                      </div>
-                    </div>
-
-                    <div class="row g-3 pt-4">
-                      <div class="col-md-12">
-                        <label for="input-alamat-operator" class="form-label">
-                          Alamat Operator Sesuai KTP
-                          <sup class="text-danger">*</sup>
-                        </label>
-                        <div class="col-sm-10">
-                          <textarea
-                            id="input-alamat-operator"
-                            class="form-control"
-                            style="height: 100px"></textarea>
+                  <div class="text-end">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#verticalycentered">
+                      <i class="ri-file-edit-line"></i>
+                      Tambah RAB
+                    </button>
+                  </div>
+                  <div class="modal fade" id="verticalycentered" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">
+                            Tambah Persyaratan Lembaga
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="row g-3">
+                              <div class="col-md-12">
+                                <label
+                                  for="input-nama-surat"
+                                  class="form-label d-flex justify-content-start">
+                                  Nama Uraian Kegiatan
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="input-nama-surat"
+                                  required />
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="submit"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal">
+                            <i class="ri-file-edit-line"></i>
+                            Simpan data
+                          </button>
                         </div>
                       </div>
                     </div>
-                    <div class="row g-3 pt-4 mt-4 mb-4">
-                      <div class="text-end">
-                        <button type="submit" class="btn btn-primary col-md-3">
-                          <i class="ri-file-edit-line"></i>
-                          Perbaharui data MWCNU
-                        </button>
+                  </div>
+
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Uraian</th>
+                        <th scope="col">Volume / Satuan</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td><strong>Peralatan</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#add-sub-kegiatan">
+                            <i class="bi bi-plus-lg"></i>
+                          </button>
+                          <button type="button" class="btn btn-outline-primary">
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn btn-outline-danger">
+                            <i class="bi bi-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1.1</td>
+                        <td>PC CPU</td>
+                        <td>1 Unit</td>
+                        <td>Rp. 13.000.000.-</td>
+                        <td>Rp. 13.000.000.-</td>
+                        <td>
+                          <button type="button" class="btn btn-outline-primary">
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn btn-outline-danger">
+                            <i class="bi bi-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="modal fade" id="add-sub-kegiatan" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Tambah Sub Kegiatan</h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="row g-3">
+                              <div class="col-md-12">
+                                <label
+                                  for="input-uraian"
+                                  class="form-label d-flex justify-content-start">
+                                  Uraian Kegiatan / Pengelompokan Pengeluaran
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="input-uraian"
+                                  required
+                                  disabled
+                                  placeholder="Peralatan" />
+                              </div>
+                            </div>
+                            <div class="row g-3 mt-2">
+                              <div class="col-md-12">
+                                <label
+                                  for="input-sub-uraian"
+                                  class="form-label d-flex justify-content-start">
+                                  Nama Uraian Kegiatan
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="input-sub-uraian"
+                                  required />
+                              </div>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                              <div class="col-md-8">
+                                <label
+                                  for="input-sub-uraian"
+                                  class="form-label d-flex justify-content-start">
+                                  Volume / Satuan
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <div
+                                  class="d-flex justify-content-start"
+                                  id="input-sub-uraian">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    required />
+                                  <select class="form-select">
+                                    <option selected>Unit</option>
+                                    <option>...</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row g-3 mt-2">
+                              <div class="col-md-8">
+                                <label
+                                  for="input-harga"
+                                  class="form-label d-flex justify-content-start">
+                                  Harga
+                                  <sup class="text-danger">*</sup>
+                                </label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="input-harga"
+                                  required />
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="submit"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal">
+                            <i class="ri-file-edit-line"></i>
+                            Simpan data
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </form>
-                  <!-- End Multi Columns Form -->
+                  </div>
                 </div>
                 <div
                   class="tab-pane fade"
